@@ -1,0 +1,183 @@
+ :root {
+     --bg1: #f1f3f7;
+     --bg2: #e9cbb6;
+     --blue: #344a86;
+     --blue-hover: #243666;
+     --red: #8b1e2d;
+     --red-hover: #6d1522;
+     --muted: #6b6b6b;
+ }
+
+ * {
+     box-sizing: border-box;
+     margin: 0;
+     padding: 0;
+ }
+
+ body {
+     font-family: 'Poppins', sans-serif;
+     background: linear-gradient(180deg, var(--bg1), var(--bg2));
+     color: #222;
+ }
+
+ /* HEADER - hanya background image header.png (tanpa teks) */
+ header.site-header {
+     background: url('../img/header.jpg') no-repeat center/contain;
+     height: 220px;
+     /* atur tinggi sesuai proporsi gambar */
+     position: relative;
+     box-shadow: 0 3px 12px rgba(0, 0, 0, 0.12);
+     overflow: visible;
+ }
+
+ /* Logo RPL yang menumpang di bawah header (separuh) */
+ .logo-wrapper {
+     position: absolute;
+     left: 50%;
+     transform: translateX(-50%);
+     bottom: -70px;
+     /* setengah logo menumpang ke luar header */
+     z-index: 2;
+     pointer-events: none;
+ }
+
+ .logo-wrapper img {
+     width: 120px;
+     /* sesuaikan ukuran logo */
+     height: auto;
+     display: block;
+     border-radius: 50%;
+     background: #fff;
+     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+     pointer-events: auto;
+ }
+
+ /* MAIN - beri ruang atas agar tidak tertutup logo */
+ main {
+     max-width: 900px;
+     margin: 110px auto 60px;
+     /* margin-top besar supaya konten tidak tertutup */
+     padding: 0 20px;
+     text-align: center;
+ }
+
+ h1.title {
+     font-size: 30px;
+     margin-bottom: 8px;
+     font-weight: 700;
+     color: #222;
+ }
+
+ p.subtitle {
+     margin: 0 0 32px;
+     color: var(--muted);
+     font-size: 15px;
+ }
+
+ /* Tombol vertical, teks rata tengah */
+ .button-container {
+     display: flex;
+     flex-direction: column;
+     gap: 14px;
+     width: 92%;
+     max-width: 520px;
+     margin: 0 auto;
+     align-items: center;
+ }
+
+ .btn {
+     position: relative;
+     width: 100%;
+     padding: 14px 20px;
+     border-radius: 8px;
+     text-decoration: none;
+     color: #fff;
+     font-weight: 700;
+     font-size: 15px;
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     /* penting: teks rata tengah */
+     box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+     transition: transform .12s ease, box-shadow .12s ease;
+     overflow: hidden;
+ }
+
+ .btn:hover {
+     transform: translateY(-4px);
+     box-shadow: 0 14px 30px rgba(0, 0, 0, 0.12);
+ }
+
+ .btn .num {
+     position: absolute;
+     left: 14px;
+     top: 50%;
+     transform: translateY(-50%);
+     min-width: 36px;
+     height: 36px;
+     display: inline-flex;
+     align-items: center;
+     justify-content: center;
+     border-radius: 6px;
+     background: rgba(255, 255, 255, 0.12);
+     color: #fff;
+     font-weight: 800;
+     box-shadow: 0 3px 8px rgba(0, 0, 0, 0.08);
+ }
+
+ .btn.blue {
+     background: var(--blue);
+ }
+
+ .btn.blue:hover {
+     background: var(--blue-hover);
+ }
+
+ .btn.red {
+     background: var(--red);
+ }
+
+ .btn.red:hover {
+     background: var(--red-hover);
+ }
+
+ footer {
+     text-align: center;
+     color: #777;
+     font-size: 13px;
+     padding: 30px 10px 40px;
+ }
+
+ /* responsive */
+ @media (max-width: 600px) {
+     header.site-header {
+         height: 160px;
+     }
+
+     .logo-wrapper {
+         bottom: -55px;
+     }
+
+     .logo-wrapper img {
+         width: 120px;
+     }
+
+     main {
+         margin-top: 90px;
+     }
+
+     h1.title {
+         font-size: 24px;
+     }
+
+     .btn {
+         padding: 12px 14px;
+         font-size: 14px;
+     }
+
+     .btn .num {
+         min-width: 32px;
+         height: 32px;
+         left: 10px;
+     }
+ }
